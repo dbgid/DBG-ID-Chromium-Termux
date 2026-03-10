@@ -1,6 +1,6 @@
 # DBG ID Chromium Termux
 
-inspired or ported from [Seledroid](https://github.com/luanon404/seledroid/tree/main/seledroid).
+inspired and ported to golang from [Seledroid](https://github.com/luanon404/seledroid/tree/main/seledroid).
 
 This module provides a Termux/Pydroid-oriented Android Chromium WebDriver client for:
 
