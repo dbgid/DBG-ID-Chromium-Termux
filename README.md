@@ -22,7 +22,10 @@ go get github.com/dbgid/DBG-ID-Chromium@latest
 1. Install the DBG ID Browser APK on Android.
 2. Put this module in your Go workspace.
 3. Make sure `ip2asn-v4-u32.tsv` stays beside the module if you want generated IP headers from the ASN dataset.
-4. Import the module as:
+```bash
+curl -L -o ip2asn-v4-u32.tsv https://raw.githubusercontent.com/dbgid/DBG-ID-Chromium-Termux/master/ip2asn-v4-u32.tsv
+```
+5. Import the module as:
 
 ```go
 import dbgidchromium "github.com/dbgid/DBG-ID-Chromium"
