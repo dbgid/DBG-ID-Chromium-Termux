@@ -124,6 +124,58 @@ func main() {
 | `PageURL` | `string` | Current page URL |
 | `PageTitle` | `string` | Current page title |
 
+## Python Native vs Go Port
+
+| Python (seledroid) | Go Port |
+|---|---|
+| `webdriver.Chrome(...)` | `NewWebDriver(DefaultOptions())` |
+| `driver.get(url)` | `driver.Goto(url)` or `driver.Get(url)` |
+| `driver.current_url` | `driver.CurrentURL()` |
+| `driver.title` | `driver.Title()` |
+| `driver.page_source` | `driver.PageSource()` |
+| `driver.execute_script(js)` | `driver.ExecuteScript(js)` |
+| `driver.find_element_by_css_selector(x)` | `driver.FindElementByCSSSelector(x)` |
+| `driver.find_elements_by_xpath(x)` | `driver.FindElementsByXPath(x)` |
+| `driver.close()` | `driver.Close()` |
+| `driver.close() + stop app` | `driver.Quit()` |
+| `WebDriverWait(driver, t).until(...)` | `driver.NewWait(t).Until(...)` |
+| `Select(element)` | `NewSelect(element)` |
+
+---
+
+## Go Usage (Native Style)
+
+Example usage similar to the original native implementation:
+
+```go
+driver, err := dbgidchromium.NewWebDriver(dbgidchromium.Options{
+    GUI:   true,
+    Debug: false,
+    Lang:  "en",
+})
+if err != nil {
+    log.Fatal(err)
+}
+defer driver.Quit()
+
+driver.Get("https://claimyshare.io")
+
+element, err := driver.FindElement(
+    dbgidchromium.ByCSSSelector,
+    "input[name='cf-turnstile-response']",
+    "",
+)
+if err != nil {
+    log.Fatal(err)
+}
+
+value, err := element.GetAttribute("value")
+if err != nil {
+    log.Fatal(err)
+}
+
+fmt.Println(value)
+```
 ## Browser Modes
 
 - Normal browser: open DBG ID Browser normally without WebDriver payload.
