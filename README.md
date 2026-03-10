@@ -126,7 +126,7 @@ func main() {
 
 ## Python Native vs Go Port
 
-| Python (seledroid) | Go Port |
+| Python (seledroid) | Go Port (dbgidchromium) |
 |---|---|
 | `webdriver.Chrome(...)` | `NewWebDriver(DefaultOptions())` |
 | `driver.get(url)` | `driver.Goto(url)` or `driver.Get(url)` |
