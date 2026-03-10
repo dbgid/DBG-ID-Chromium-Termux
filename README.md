@@ -119,23 +119,6 @@ func main() {
 | `PageURL` | `string` | Current page URL |
 | `PageTitle` | `string` | Current page title |
 
-## gettoken.go Example
-
-`gettoken.go` is a simple example entrypoint. It:
-
-- creates a driver
-- installs interrupt cleanup
-- opens `https://claimyshare.io`
-- waits briefly
-- checks Turnstile presence
-- reads the token
-
-Run it with:
-
-```sh
-go run gettoken.go
-```
-
 ## Browser Modes
 
 - Normal browser: open DBG ID Browser normally without WebDriver payload.
