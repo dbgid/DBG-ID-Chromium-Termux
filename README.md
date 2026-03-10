@@ -40,7 +40,7 @@ import (
 	"fmt"
 	"log"
 
-	dbgidchromium "dbgidchromium"
+	dbgidchromium "github.com/dbgid/DBG-ID-Chromium"
 )
 
 func main() {
